@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+:root {
+	--bg: #6a994e;
+	--accent1: #386641;
+	--accent2: #f2e8cf;
+	--dark: #161a1d;
+	--shadow: 0px 7px 22px -4px rgba(3, 3, 3, 0.703);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	font-family: "Montserrat", sans-serif;
+	scroll-behavior: smooth;
+}
+section {
+	padding: 3rem 2rem;
+	border-bottom: 3px dashed var(--accent1);
+}
+section:first-child {
+	padding-top: 5rem;
+}
+section:last-child {
+	border: none;
+}
+h1 {
+	font-weight: 600;
+	font-size: 3.3rem;
+}
+h2 {
+	font-weight: 600;
+	font-size: 3rem;
+	padding: 1.5rem 0;
+}
+h3 {
+	font-weight: 600;
+	font-size: 2rem;
+	padding: 1rem 0;
+	text-align: center;
+}
+p {
+	font-size: 1.8rem;
+	padding: 1.5rem 0;
+}
+a {
+	text-decoration: none;
+	color: var(--dark);
+}
+i {
+	transition: 0.2s ease all;
+}
+a:hover i {
+	color: var(--accent1);
+	transform: scale(1.2);
+}
+i {
+	color: var(--dark);
+}
+header {
+	width: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba(106, 153, 78, 1) 20%,
+		rgba(56, 102, 65, 1) 100%
+	);
+}
+header .box-container .logo {
+	width: 100%;
+	padding: 1.5rem 2rem;
+	text-align: center;
+	margin: 0 auto;
+	border-bottom: 2px dashed var(--dark);
+}
+header .box-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+header .box-container .box {
+	text-align: center;
+	padding: 1rem 2rem;
+	width: 100%;
+	height: 100%;
+	border-bottom: 2px dashed var(--dark);
+}
+
+header .box-container .box i {
+	margin-right: 0.5rem;
+	font-size: 1.8rem;
+}
+
+main {
+	background: rgb(240, 221, 175);
+	background: linear-gradient(
+		141deg,
+		rgba(240, 221, 175, 1) 0%,
+		rgba(242, 222, 171, 1) 10%,
+		rgba(242, 232, 207, 1) 50%,
+		rgba(240, 221, 175, 1) 90%,
+		rgba(242, 222, 171, 1) 100%
+	);
+	width: 100%;
+	min-height: 100vh;
+}
+main .bg-decal {
+	position: absolute;
+	opacity: 0.2;
+	width: 200px;
+	height: 100vh;
+	background-image: url("decal1.png");
+}
+.about .decal {
+	text-align: center;
+	margin: 0 auto;
+}
+.about .decal img {
+	margin: 0 auto;
+	max-width: 200px;
+}
+.order p {
+	text-align: center;
+}
+
+.avaliable .box-container {
+	width: 100%;
+}
+.avaliable .box-container .box {
+	max-width: 50rem;
+	padding: 0 2.5rem;
+	background-color: var(--bg);
+	border-radius: 0.5rem;
+	margin: 0 auto;
+}
+.avaliable .box-container .box.hidden {
+	display: none;
+	text-decoration: line-through;
+}
+.avaliable .box-container .box img {
+	max-width: 100%;
+}
+
+.order .box-container p {
+	border-top: 2px dashed var(--dark);
+}
+.order .box-container .contact-details {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+	padding-bottom: 1.5rem;
+}
+.order .box-container .contact-details a,
+.order .box-container .contact-details a i {
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+.order .box-container p i {
+	font-size: 2rem;
+}
+.order .box-container p:last-child i {
+	margin-left: 0.5rem;
+}
+footer {
+	text-align: center;
+	background: linear-gradient(
+		90deg,
+		rgba(56, 102, 65, 1) 0%,
+		rgba(106, 153, 78, 1) 50%,
+		rgba(56, 102, 65, 1) 100%
+	);
+}
+footer p {
+	font-size: 1.4rem;
+}
+.order .box-container .box .one span,
+.two span,
+.three span,
+.four span {
+	display: none;
+}
+@media screen and (min-width: 768px) {
+	header {
+		position: fixed;
+		z-index: 2;
+		background: linear-gradient(
+			90deg,
+			rgba(56, 102, 65, 1) 0%,
+			rgba(106, 153, 78, 1) 50%,
+			rgba(56, 102, 65, 1) 100%
+		);
+		box-shadow: var(--shadow);
+	}
+	header::after {
+		content: "";
+		position: absolute;
+		top: 1rem;
+		width: 100%;
+		height: calc(100% - 26px);
+		border-top: 3px dashed var(--dark);
+		border-bottom: 3px dashed var(--dark);
+	}
+	header .box-container .logo {
+		max-width: 350px;
+		order: 1;
+		border: none;
+	}
+	header .box-container .box {
+		border: none;
+	}
+	header .box-container .box:first-child {
+		order: 0;
+	}
+	header .box-container .box:last-child {
+		order: 2;
+	}
+	header .box-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		justify-content: center;
+	}
+	header .box-container .box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	section:first-child {
+		padding-top: 4rem;
+	}
+	section {
+		padding: 4rem 3.5rem;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	main {
+		padding-top: 12rem;
+	}
+	h1 {
+		text-align: center;
+		font-size: 3rem;
+		margin: 1.5rem 0;
+	}
+	h2 {
+		text-align: center;
+	}
+	.about {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		min-height: 48rem;
+	}
+	.about p {
+		font-size: 2rem;
+	}
+	.about .text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 1;
+	}
+	.about p {
+		line-height: 1.5;
+		max-width: 60%;
+	}
+	.about .decal {
+		position: absolute;
+		bottom: 2rem;
+		right: 5rem;
+	}
+	.about .decal img {
+		max-width: 200px;
+	}
+	.avaliable .box-container {
+		display: grid;
+		gap: 3rem;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		text-align: center;
+	}
+	.avaliable .box-container .box.hidden {
+		opacity: 0.4;
+		user-select: none;
+		display: block;
+	}
+	.order .box-container .box {
+		max-width: 70rem;
+		margin: 0 auto;
+	}
+	.order .box-container .box .one,
+	.two,
+	.three,
+	.four {
+		position: relative;
+		display: block;
+	}
+	.order .box-container .box p {
+		padding-right: 2rem;
+
+		text-align: right;
+	}
+	.order .box-container .box .one .contact-details {
+		padding-right: 2rem;
+	}
+	.order .box-container .box .one {
+		border-right: 2px dashed var(--dark);
+	}
+
+	.order .box-container .box .two p,
+	.three p,
+	.four p {
+		height: 100%;
+		padding-right: 2rem;
+		border-right: 2px dashed var(--dark);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	.order .box-container .box .four p {
+		border-bottom: 2px dashed var(--dark);
+	}
+	.order .box-container .box .one,
+	.two,
+	.three,
+	.four {
+		height: 9.2rem;
+	}
+	.order .box-container .box .contact-details {
+		justify-content: flex-end;
+	}
+	.order .box-container .box .one span,
+	.two span,
+	.three span,
+	.four span {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(0, -50%);
+		font-size: 4rem;
+		background: var(--accent1);
+		padding: 0 1rem;
+		min-height: 100%;
+		aspect-ratio: 1;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		color: var(--accent2);
+	}
+	.order .box-container .box p big {
+		display: none;
+	}
+	footer p {
+		font-size: 1.6rem;
+	}
+	footer {
+		box-shadow: var(--shadow);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	html {
+		font-size: 70%;
+	}
+}
